@@ -119,7 +119,8 @@ function arrTransform(arr, isPrime, isLessThan1) {
   let res = [];
   arr.forEach(item => {
     if(isPrime(item)) {
-      item +=` – a prime number’`;
+      // item = ` $(item) – a prime number’`;
+      item += ' – a prime number’';
     } else if (isLessThan1(item)) {
       item = item.toFixed(4);
     } else {

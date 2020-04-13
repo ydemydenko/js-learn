@@ -5,16 +5,12 @@ function getEvenNums1(arr) {
   if (!Array.isArray(arr)) throw new TypeError;
 
   let evNums1 = [];
-  for (let i = arr.length - 1; i >= 0; i--) {
-    // Skip if element is not a number.
-    if (typeof arr[i] !== 'number') {
-      continue;
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === 'number' && arr[i] % 2 == 0) {
+      evNums1.push(arr[i]);
     }
-
-    if (arr[i] % 2 != 0) continue;
-    evNums1[evNums1.length] = arr[i];
   }
-  return evNums1.reverse();
+  return evNums1;
 }
 
 console.log('evNums1 = ', getEvenNums1([10, '12aa', ['test', 2,], 45, 60, 34]));
@@ -57,7 +53,7 @@ function sliceCopy1(arr, pos1 = 0, pos2 = arr.length) {
   let res = [];
   for (let i = 0; i < arr.length; i++) {
     if (i > pos1 && i <= pos2) {
-      res[res.length] = i;
+      res.push(i);
     }
   }
   return res;
@@ -83,7 +79,7 @@ function plusTen(num) {
 function mapCopy1(arr, callback) {
   let res = [];
   for (let i = 0; i < arr.length; i++) {
-    res[res.length] = callback(arr[i]);
+    res.push = callback(arr[i]);
   }
   return res;
 }
